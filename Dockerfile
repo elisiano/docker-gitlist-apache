@@ -1,7 +1,7 @@
 FROM php:7-apache
 LABEL \
 	maintainer="Elisiano Petrini <elisiano@gmail.com>" \
-	org.label-schema.vcs-url="https://github.com/elisiano/docker-gitlist-apache"
+	org.label-schema.vcs-url="https://github.com/elisiano/docker-gitlist-apache" \
 	org.label-schema.version="0.6.0"
 
 COPY config.ini /var/www/html/

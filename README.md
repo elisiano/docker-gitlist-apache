@@ -1,5 +1,5 @@
 #  Docker GitList Apache
-This docker image is based off of the original php:7-apache and it installs [GitList|https://gitlist.org].
+This docker image is based off of the original php:7-apache and it installs [GitList](https://gitlist.org).
 As suggested on GitList docs, a release version is installed, not from any git branch, because it comes packaged with all the files needed.
 
 The current version of GitLite is 0.6.0

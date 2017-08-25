@@ -10,6 +10,7 @@ You need to mount your repos directory to /repos on the image. On top of that yo
 ```bash
 docker run -it --rm -v /path/to/repos:/repos -p 8080:80 elisiano/gitlist-apache
 ```
+if you want to use your own config.ini joust mount that on /var/www/html/config.ini
 
 ## Contribute
 PR welcome at https://github.com/elisiano/docker-gitlist-apache

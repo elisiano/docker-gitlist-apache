@@ -5,6 +5,7 @@ LABEL \
 	org.label-schema.version="0.6.0"
 
 COPY config.ini /var/www/html/
+COPY preinit-user.sh /usr/local/bin/
 
 # Use the release version so no other developers tools necessary (all comes bundled)
 ENV GITLIST_LINK https://github.com/klaussilveira/gitlist/releases/download/0.6.0/gitlist-0.6.0.tar.gz
@@ -15,4 +16,4 @@ RUN apt-get update && apt-get install -y git \
 	&& mkdir /var/www/html/cache && chmod 777 /var/www/html/cache \
 	&& a2enmod rewrite
 
-
+CMD [ "/usr/local/bin/preinit-user.sh" ]

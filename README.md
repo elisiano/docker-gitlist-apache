@@ -13,5 +13,13 @@ docker run -it --rm -v /path/to/repos:/repos -p 8080:80 elisiano/gitlist-apache
 Then point your browser at http://localhost:8080
 If you want to use your own config.ini joust mount that on /var/www/html/config.ini
 
-## Contribute
+If the repos are not readable from the apache user (www-data) inside the container, you can use the following two variables to fix that:
+* APACHE\_UID: numeric UID of the user owning repos (on the hosting filesystem)
+* APACHE\_GID: numeric GID of the group owning the repos (on the hosting filesystem)
+
+```bash
+docker run -it --rm -v /path/to/repos:/repos -p 8080:80 -e APACHE_UID:$(id -u repouser) -e APACHE_GID:$(id -g repouser) elisiano/gitlist-apache
+```
+
+#  Contribute
 PR welcome at https://github.com/elisiano/docker-gitlist-apache

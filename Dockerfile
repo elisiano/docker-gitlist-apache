@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y git \
 	&& curl -sL $GITLIST_LINK | tar --strip-components 1 -C /var/www/html -xzf - \
 	&& curl -s http://getcomposer.org/installer | php \
 	&& php composer.phar install \
-	&& mkdir /var/www/html/cache 2>/dev/null|| true \
+	&& mkdir /var/www/html/cache 2>/dev/null || true \
 	&& chmod -R 777 /var/www/html/cache \
 	&& a2enmod rewrite
 
